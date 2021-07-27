@@ -1,0 +1,46 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-27 10:09:17
+ * @LastEditTime: 2021-07-27 10:19:06
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ES6-ES11\扩展运算符应用.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>扩展运算符应用</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        //1. 数组的合并 情圣  误杀  唐探
+        // const kuaizi = ['王太利','肖央'];
+        // const fenghuang = ['曾毅','玲花'];
+        // // const zuixuanxiaopingguo = kuaizi.concat(fenghuang);
+        // //本质是把数组=>转为参数序列
+        // const zuixuanxiaopingguo = [...kuaizi, ...fenghuang];
+        // console.log(zuixuanxiaopingguo);
+
+        //2. 数组的克隆
+        // const sanzhihua = ['E','G','M'];
+        // const sanyecao = [...sanzhihua];//  ['E','G','M']
+        // console.log(sanyecao);
+
+        //3. 将伪数组转为真正的数组
+        const divs = document.querySelectorAll('div');
+        const divArr = [...divs];
+        console.log(divArr);// arguments
+        
+
+
+
+
+        
+    </script>
+</body>
+</html>
