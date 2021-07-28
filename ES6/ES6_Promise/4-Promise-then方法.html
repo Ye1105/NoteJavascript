@@ -1,0 +1,50 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-28 09:54:43
+ * @LastEditTime: 2021-07-28 10:15:24
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ES6-ES11\ES6\ES6_Promise\Promise-then方法.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const p=new Promise((resolve,reject) => {
+            setTimeout(() => {
+                resolve("用户数据");
+                //reject("出错了");
+            }, 1000);
+        })
+
+        //调用 then 方法
+        const result=p.then(value=> {
+            //1. 非 promise 类型的属性
+            //console.log(value);    
+            //2. 是 promise 对象
+            // return new Promise((resolve,reject) => {
+            //     //resolve('good')
+            //     reject('error')
+            // })
+            //3.抛出错误
+            //throw new Error("出错了")
+            throw "出错了";
+        },reason=> {
+            console.warn(reason);
+        })
+
+        console.log(result)
+
+        //链式调用
+        p.then(value=>{})
+         .then(value=>{})
+
+    </script>
+</body>
+</html>

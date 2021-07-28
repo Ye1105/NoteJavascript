@@ -1,0 +1,39 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-28 12:07:42
+ * @LastEditTime: 2021-07-28 12:09:13
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ES6-ES11\ES6\class类.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //手机
+        function Phone(brand, price){
+            this.brand = brand;
+            this.price = price;
+        }
+
+        //添加方法
+        Phone.prototype.call = function(){
+            console.log("我可以打电话!!");
+        }
+        
+        //实例化对象
+        let Huawei = new Phone('华为', 5999);
+        Huawei.call();
+        console.log(Huawei);
+
+
+        
+    </script>
+</body>
+</html>

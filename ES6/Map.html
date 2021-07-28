@@ -1,0 +1,66 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-28 11:48:53
+ * @LastEditTime: 2021-07-28 12:06:40
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ES6-ES11\ES6\Map.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //声明 Map
+        let m=new Map();
+
+        //添加元素
+        m.set('name','小明');
+        m.set('change',function () {
+            console.log("change function")
+        });
+
+        // for (const [index,item] of m.entries()) {
+        //     console.log(index,item)   
+        // }
+        // for (const item of m.keys()) {
+        //     console.log(item)   
+        // }
+        // for (const item of m.values()) {
+        //     console.log(item)   
+        // }
+        // m.forEach(function(value,key) {
+        //     console.log(value,key)
+        // })
+
+        let key={
+            school:'ATGUIV'
+        }
+
+        m.set(key,['北京','上海'])
+        console.log(m);
+
+        for (const [index,item] of m.entries()) {
+            console.log(index,"---",item)   
+        }
+
+         //size
+        // console.log(m.size);
+
+        //删除
+        // m.delete('name');
+
+        //获取
+        // console.log(m.get('change'));
+        // console.log(m.get(key));
+
+        //清空
+        // m.clear();
+    </script>
+</body>
+</html>

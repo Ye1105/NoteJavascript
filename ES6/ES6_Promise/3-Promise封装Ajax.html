@@ -1,0 +1,59 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-07-27 17:36:31
+ * @LastEditTime: 2021-07-28 09:51:43
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ES6-ES11\ES6\ES6_Promise\Promise封装Ajax.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //接口地址：https://api.apiopen.top/getJoke
+
+    const p=new Promise((resolve,reject) => {
+
+        //1.创建对象[可扩展超文本传输请求]
+        const xhr=new XMLHttpRequest();
+
+        //2.初始化
+        xhr.open("GET","https://api.apiopen.top/getJoke");
+
+        //3.f发送
+        xhr.send();
+
+        //4.绑定事件，处理响应结果
+        xhr.onreadystatechange=function () {
+            //判定
+            if(xhr.readyState==4){
+                //判定响应状态码 200-299
+                if(xhr.status>=200&&xhr.status<300){
+                    //表示成功
+                    resolve(xhr.response);
+                }
+                else{
+                    //如果失败
+                    reject(xhr.status);
+                }
+            }
+        }
+    })
+    //指定回调
+    p.then((value) => {
+        console.log(value);
+    },(reason) => {
+        
+    })
+
+</script>
+</html>
