@@ -1,0 +1,43 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-10 16:08:59
+ * @LastEditTime: 2021-08-10 16:43:58
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ES6-ES11\ES6\ES6_module\class类.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //get 和  set
+        class Phone{
+            constructor(price){
+                this._price=price;
+            }
+     
+            get price(){
+
+                console.log("价格属性被读取了");
+                return _price;
+            }
+            set price(newVal){
+                console.log(newVal)
+                this._price=newVal
+            }
+        }    
+        //实例化对象
+        let s=new Phone(5);
+
+        console.log(s._price);
+        s.price="6"
+        console.log(s._price)
+    </script>
+</body>
+</html>

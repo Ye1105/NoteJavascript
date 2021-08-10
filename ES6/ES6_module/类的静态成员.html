@@ -1,0 +1,57 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-10 16:46:59
+ * @LastEditTime: 2021-08-10 17:00:11
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ES6-ES11\ES6\ES6_module\类的静态成员.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /*函数对象的属性 和 实例对象的属性 是不相通的，但是实例对象的属性和函数对象原型的属性是相通的；即：静态属性是属于类的，不属于对象的*/
+        /*对于  static 标注的属性，属于类，但不属于实例对象*/
+
+        // function Phone() {
+            
+        // }
+        // Phone.name='手机'
+        // Phone.change=function(){
+        //     console.log("我可以改变世界");
+        // }
+        // Phone.prototype.size="5.5inch"
+
+
+        // let nokia=new Phone();
+        // console.log(nokia.name);
+        // nokia.change();
+        // console.log(nokia.size);
+
+
+
+             
+        // console.log(Phone)
+        // console.log(new Phone())
+
+        class Phone{
+            //静态属性
+            static name='手机';
+            static change(){
+                console.log('everything is ok')
+            }
+        }
+        let nokia=new Phone();
+        console.log(nokia.name);
+        console.log(Phone.name);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-10 17:02:54
+ * @LastEditTime: 2021-08-10 17:44:51
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ES6-ES11\ES6\ES6_module\类继承.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //call()、apply()、bind() 都是用来重定义 this 这个对象的！
+
+        //call 的参数是直接放进去的，第二第三第 n 个参数全都用逗号分隔，直接放到后面 obj.myFun.call(db,'成都', ... ,'string' )。
+        //apply 的所有参数都必须放在一个数组里面传进去 obj.myFun.apply(db,['成都', ..., 'string' ])。
+        //bind 除了返回是函数以外，它 的参数和 call 一样。
+        //当然，三者的参数不限定是 string 类型，允许是各种类型，包括函数 、 object 等等！
+
+        //手机
+        function Phone(brand,price) {
+            this.brand=brand;
+            this.price=price;
+            //this.color='yellow'
+        }
+        Phone.prototype.call=function(){
+            console.log(this)  
+            console.log(this.color)
+            console.log('我可以打电话')
+        }
+
+        //智能手机
+        function SmartPhone(brand,price,color,size)
+        {
+            Phone.call(this,brand,price);
+            this.color=color;
+            this.size=size;
+        }
+                
+        //设置子级构造函数的原型
+        SmartPhone.prototype = new Phone;  //这样之后，实例对象上就会有父级的方法
+        SmartPhone.prototype.constructor = SmartPhone;  //做一个校正，不加也行
+
+        //声明子类的方法
+        SmartPhone.prototype.photo = function(){
+            console.log("我可以拍照")
+        }
+
+        SmartPhone.prototype.playGame = function(){
+            console.log("我可以玩游戏");
+        }
+
+        const xiaomi=new SmartPhone('xiaomi',300,'red','1.2yinchu')
+        xiaomi.call(); //因为call()改变了this的指向
+        console.log(xiaomi)
+    </script>
+</body>
+</html>

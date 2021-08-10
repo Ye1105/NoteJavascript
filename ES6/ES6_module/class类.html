@@ -1,0 +1,56 @@
+<!--
+ * @Author: your name
+ * @Date: 2021-08-10 16:08:59
+ * @LastEditTime: 2021-08-10 16:30:14
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \ES6-ES11\ES6\ES6_module\class类.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //手机
+        function Phone(brand,price) {
+            this.brand=brand;
+            this.price=price;
+        }
+        //添加方法
+        Phone.prototype.call=function () {
+            console.log("我可以打电话");
+            //console.log(this.arguments);
+        }
+        //实例化对象
+        let Huawei=new Phone('华为',599);
+        Huawei.call();
+        console.log(Huawei);
+
+
+        //class
+        class Shouji{
+            //构造方法  名字不能修改
+            constructor(brand,price){
+                this.brand=brand;
+                this.price=price;
+            }
+
+            //方法必须使用该语法，不能使用 ES5 的对象完整形式
+            call() {
+                console.log("我可以打电话");
+            }
+        }
+
+        let onePlus=new Shouji("1+",1222)
+        console.log(onePlus);
+
+
+
+    </script>
+</body>
+</html>

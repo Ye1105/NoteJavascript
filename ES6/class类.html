@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2021-07-28 12:07:42
- * @LastEditTime: 2021-07-28 12:09:13
+ * @LastEditTime: 2021-07-28 13:26:40
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \ES6-ES11\ES6\class类.html
@@ -16,24 +16,55 @@
 </head>
 <body>
     <script>
-        //手机
-        function Phone(brand, price){
-            this.brand = brand;
-            this.price = price;
+        // //手机
+        // function Phone(brand, price){
+        //     this.brand = brand;
+        //     this.price = price;
+        // }
+
+        // //添加方法
+        // Phone.prototype.call = function(){
+        //     console.log("我可以打电话!!");
+        // }
+        
+        // //实例化对象
+        // let Huawei = new Phone('华为', 5999);
+        // Huawei.call();
+        // console.log(Huawei);
+
+
+        // console.log(Object.prototype); 
+        // //Object{}
+        // var o = new Object();
+        // console.log(o.prototype);  //undefined
+        // console.log(Array.prototype); 
+        // //[Symbol(Symbol.unscopables): Object]
+        // console.log(Function.prototype); 
+        // //function(){}
+        // function hello(){
+        // console.log("hello");
+        // }
+        // hello.prototype = "hello world";
+        // console.log(hello.prototype); 
+        // //hello world
+
+        //class
+        class Shouji{
+            //构造方法 名字不能修改
+            constructor(brand, price){
+                this.brand = brand;
+                this.price = price;
+            }
+
+            //方法必须使用该语法, 不能使用 ES5 的对象完整形式
+            call(){
+                console.log("我可以打电话!!");
+            }
         }
 
-        //添加方法
-        Phone.prototype.call = function(){
-            console.log("我可以打电话!!");
-        }
-        
-        //实例化对象
-        let Huawei = new Phone('华为', 5999);
-        Huawei.call();
-        console.log(Huawei);
+        let onePlus = new Shouji("1+", 1999);
 
-
-        
+        console.log(onePlus);
     </script>
 </body>
 </html>
