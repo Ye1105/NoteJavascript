@@ -11,6 +11,10 @@ import * as m3 from './m3.js';
 // console.log(m2)
 // console.log(m3)
 
-m1.name;
-m2.school();
-m3.default.school();
+// m1.name;
+// m2.school();
+// m3.default.school();
+
+//修改背景颜色为粉色
+import $ from 'jquery';  //const $=require('jquery');
+$('body').css('background','pink');
