@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="module">
+
+        //1.通用的导入方式
+        //引入 m1.js 模块内容
+        //为了解决跨域问题，安装LiverServer插件，然后Open with LiveServer 就可。
+        // import * as m1 from './m1.js';
+        // console.log(m1);
+        //引入 m2.js 模块内容
+        // import * as m2 from './m2.js';
+        // console.log(m2);       
+        //引入 m3.js 模块内容
+        // import * as m3 from './m3.js';
+        // console.log(m3)
+        // m3.default.school()
+
+        //2.解构赋值的导入方式
+         import {name,school} from './m1.js';
+        //别名
+         import {name as m2name,school as m2school} from './m2.js';
+         import {default as m3} from './m3.js';
+         
+         console.log(name,school,m2name,m2school);   
+         console.log(m3);
+
+        //3.简便方式  针对默认暴露
+        import mm3 from './m3.js';
+        console.log(mm3)
+
+    </script>
+</body>
+</html>
