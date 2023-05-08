@@ -1,2 +1,2 @@
 # ES6-ES11
-前端Javascript
+Javascript Basic Knowledge Learning Notes
